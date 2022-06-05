@@ -6,23 +6,25 @@ import org.junit.jupiter.api.Test;
 
 public class TodosTests {
     @Test
-    public void testTodosAdd(){
+    public void testTodosAdd() {
         Todos todos = new Todos();
         todos.addTask("Погулять");
-        Assertions.assertEquals(todos.getAllTasks(),"Погулять ");
+        Assertions.assertEquals(todos.getAllTasks(), "Погулять ");
     }
+
     @Test
-    public void testTodosRemove(){
+    public void testTodosRemove() {
         Todos todos = new Todos();
         todos.addTask("Погулять");
         todos.removeTask("Погулять");
-        Assertions.assertEquals(todos.getAllTasks(),"");
+        Assertions.assertEquals(todos.getAllTasks(), "");
     }
+
     @Test
-    public void testTodosGetAll(){
+    public void testTodosGetAll() {
         Todos todos = new Todos();
         todos.addTask("Погулять");
         todos.addTask("Убраться");
-        Assertions.assertEquals(todos.getAllTasks(),"Погулять Убраться ");
+        Assertions.assertEquals(todos.getAllTasks(), "Погулять Убраться ");
     }
 }
