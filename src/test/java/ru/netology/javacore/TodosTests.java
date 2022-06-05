@@ -16,13 +16,13 @@ public class TodosTests {
         Todos todos = new Todos();
         todos.addTask("Погулять");
         todos.removeTask("Погулять");
-        Assertions.assertEquals(todos.getAllTasks(),null);
+        Assertions.assertEquals(todos.getAllTasks(),"");
     }
     @Test
     public void testTodosGetAll(){
         Todos todos = new Todos();
         todos.addTask("Погулять");
         todos.addTask("Убраться");
-        Assertions.assertEquals(todos.getAllTasks(),"Погулять Убраться");
+        Assertions.assertEquals(todos.getAllTasks(),"Погулять Убраться ");
     }
 }
