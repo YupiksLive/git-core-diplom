@@ -29,11 +29,11 @@ public class TodoServer {
                     String taskJson = in.readLine();
                     GsonBuilder gsonBuilder = new GsonBuilder();
                     Gson gson = gsonBuilder.create();
-                    Todos todosGson = gson.fromJson(taskJson, Todos.class);
-                    if (todosGson.type.equalsIgnoreCase("add")) {
-                        todos.addTask(todosGson.task);
-                    } else if (todosGson.type.equalsIgnoreCase("remove")) {
-                        todos.removeTask(todosGson.task);
+                    ServerOperation todosGson = gson.fromJson(taskJson, ServerOperation.class);
+                    if (todosGson.getType().equalsIgnoreCase("add")) {
+                        todos.addTask(todosGson.getTask());
+                    } else if (todosGson.getType().equalsIgnoreCase("remove")) {
+                        todos.removeTask(todosGson.getTask());
                     }
                     out.println(todos.getAllTasks());
                 } catch (IOException e) {

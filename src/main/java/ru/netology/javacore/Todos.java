@@ -4,10 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Todos {
-    public String type;
-    public String task;
     private List<String> todos = new ArrayList<>();
-    private StringBuilder stringBuilder = new StringBuilder();
 
     public void addTask(String task) {
         todos.add(task);
@@ -18,6 +15,7 @@ public class Todos {
     }
 
     public String getAllTasks() {
+        StringBuilder stringBuilder = new StringBuilder();
         todos.stream()
                 .sorted();
         for (String todo : todos ){
